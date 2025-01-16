@@ -1,0 +1,301 @@
+﻿@page
+@model Univer.Pages.Students.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    namespace Univer.Pages {
+        public class style
+
+    {
+    }
+
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+        a:hover {
+            color: #f00;
+        }
+
+    /* стили для хедера */
+
+    header {
+        background-color: #f1f1f1;
+        padding: 10px;
+    }
+
+    nav {
+        float: right;
+    }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 10px;
+        }
+
+    /* стили для основной части */
+
+    main {
+        padding: 10px;
+    }
+
+    #intro {
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+        #intro h2 {
+            margin-bottom: 20px;
+        }
+
+        #intro p {
+            margin-bottom: 20px;
+        }
+
+        #intro .button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            #intro .button:hover {
+                background-color: #f00;
+            }
+
+    #programs {
+        background-color: #f1f1f1;
+        padding: 20px;
+    }
+
+        #programs ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #programs li {
+            width: 25%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+    #research {
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+        #research ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #research li {
+            width: 33.33%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+    #news {
+        background-color: #f1f1f1;
+        padding: 20px;
+    }
+
+        #news ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #news li {
+            width: 50%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+    footer {
+        background-color: #f9f9f9;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+@* <p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student[0].EnrollmentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Student) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+<head>
+    <title>Веб-сайт университета</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Rusloid International University</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Домой</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Программы</a></li>
+                <li><a href="#">Исследования</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="intro">
+            <h2>Добро пожаловать в Rusloid International University</h2>
+            <p>Мы являемся ведущим высшим учебным заведением, предлагающим широкий спектр программ бакалавриата, магистратуры и докторантуры.</p>
+            <a href="#" class="button">Узнать больше</a>
+        </section>
+
+        <section id="programs">
+            <h2>Наши программы</h2>
+            <ul>
+                <li>Бакалавриат</li>
+                <li>Магистратура</li>
+                <li>Докторантура</li>
+            </ul>
+        </section>
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Student[0].LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Student[0].FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Student[0].EnrollmentDate)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Student)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <section id="research">
+            <h2>Наши исследования</h2>
+            <p>Мы проводим передовые исследования в различных областях, включая:</p>
+            <ul>
+                <li>Наука</li>
+                <li>Технологии</li>
+                <li>Гуманитарные науки</li>
+            </ul>
+        </section>
+
+        <section id="news">
+            <h2>Последние новости</h2>
+            <ul>
+                <li>Ученые обнаружили новый вид глубоководной рыбы с прозрачной головой</li>
+                <li>Искусственный интеллект создал первый в мире музыкальный альбом, написанный и исполненный машиной</li>
+                <li>Ученые разработали новый материал, который может поглощать 99% солнечного света</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Все права защищены & copy; Rusloid International University</p>
+    </footer>
+
+</body>

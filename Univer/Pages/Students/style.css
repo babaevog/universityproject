@@ -1,0 +1,149 @@
+﻿namespace Univer.Pages
+{
+    public class style
+    {
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+    a:hover {
+        color: #f00;
+    }
+
+/* стили для хедера */
+
+header {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+nav {
+    float: right;
+}
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-right: 10px;
+    }
+
+/* стили для основной части */
+
+main {
+    padding: 10px;
+}
+
+#intro {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+    #intro h2 {
+        margin-bottom: 20px;
+    }
+
+    #intro p {
+        margin-bottom: 20px;
+    }
+
+    #intro .button {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        #intro .button:hover {
+            background-color: #f00;
+        }
+
+#programs {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+    #programs ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #programs li {
+        width: 25%;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+#research {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+    #research ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #research li {
+        width: 33.33%;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+#news {
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+    #news ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #news li {
+        width: 50%;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+footer {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+}
