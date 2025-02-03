@@ -1,4 +1,4 @@
-﻿@page
+﻿@* @page
 @model Univer.Pages.Students.CreateModel
 
 @{
@@ -37,6 +37,141 @@
 
 <div>
     <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+ *@
+ @page
+@model Univer.Pages.Students.CreateModel
+@{
+    ViewData["Title"] = "Добавить нового студента";
+}
+
+<style>
+    /* Общие стили */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2c3e50;
+        font-size: 1.8em;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    input[type="text"], input[type="date"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        input[type="text"]:focus, input[type="date"]:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 8px rgba(41, 128, 185, 0.5);
+        }
+
+    .button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #2980b9, #1abc9c);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: all 0.3s ease;
+    }
+
+        .button:hover {
+            background: linear-gradient(135deg, #e74c3c, #e67e22);
+            transform: scale(1.05);
+        }
+
+    .back-link {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        color: #2980b9;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .back-link:hover {
+            color: #e74c3c;
+        }
+
+    .text-danger {
+        color: #e74c3c;
+        font-size: 0.9em;
+        margin-top: 5px;
+        display: block;
+    }
+</style>
+
+<div class="form-container">
+    <h2>Добавить нового студента</h2>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Student.LastName" class="control-label">Фамилия</label>
+            <input asp-for="Student.LastName" class="form-control" />
+            <span asp-validation-for="Student.LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Student.FirstName" class="control-label">Имя</label>
+            <input asp-for="Student.FirstName" class="form-control" />
+            <span asp-validation-for="Student.FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Student.EnrollmentDate" class="control-label">Дата зачисления</label>
+            <input asp-for="Student.EnrollmentDate" class="form-control" type="date" />
+            <span asp-validation-for="Student.EnrollmentDate" class="text-danger"></span>
+        </div>
+        <button type="submit" class="button">Добавить</button>
+    </form>
+    <a href="/Students/Index" class="back-link">Назад к списку студентов</a>
 </div>
 
 @section Scripts {

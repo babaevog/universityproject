@@ -25,13 +25,13 @@ namespace Univer.Pages.Students
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
-                return NotFound(); 
+                return NotFound();
             }
             Student = await _context.Students.FindAsync(id);
 
-            if (Student == null)    
+            if (Student == null)
             {
                 return NotFound();
             }
@@ -45,25 +45,24 @@ namespace Univer.Pages.Students
         {
             var studentToUpdate = await _context.Students.FindAsync(id);
 
-            if(studentToUpdate == null)
+            if (studentToUpdate == null)
             {
                 return NotFound();
             }
             if (await TryUpdateModelAsync<Student>(
-                studentToUpdate, "student"))
+         studentToUpdate,
+         "student",
+         s => s.FirstName, s => s.LastName, s => s.EnrollmentDate))
             {
-               
-                _context.Students.Add(studentToUpdate);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
-
             }
             return Page();
         }
 
         private bool StudentExists(int id)
         {
-          return (_context.Students?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Students?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

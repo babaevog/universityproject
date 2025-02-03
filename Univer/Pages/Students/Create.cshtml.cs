@@ -26,7 +26,7 @@ namespace Univer.Pages.Students
 
         [BindProperty]
         public Student Student { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,8 +35,8 @@ namespace Univer.Pages.Students
 
             if (await TryUpdateModelAsync<Student>(
                 emptyStudent, "student",
-                s => s.FirstName, s => s.LastName, s => s.EnrollmentDate)) 
-            { 
+                s => s.FirstName, s => s.LastName, s => s.EnrollmentDate))
+            {
                 _context.Students.Add(emptyStudent);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
@@ -46,3 +46,4 @@ namespace Univer.Pages.Students
         }
     }
 }
+

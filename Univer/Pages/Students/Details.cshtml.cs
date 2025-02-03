@@ -28,15 +28,15 @@ namespace Univer.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Students
-                .Include(s => s.Enrollments)
-                .ThenInclude(e  => e.Course)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (Student == null)
-            {
-                return NotFound();
-            }
+            //Student = await _context.Students
+            //    .Include(s => s.Enrollments)
+            //    .ThenInclude(e  => e.Course)
+            //    .AsNoTracking()
+            //    .FirstOrDefaultAsync(m => m.Id == id);
+            //if (Student == null)
+            //{
+            //    return NotFound();
+            //}
             return Page();
         }
     }

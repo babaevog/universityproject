@@ -8,7 +8,7 @@ namespace Univer.Models
         public string LastName { get; set; } = string.Empty;
         public string FirstName { get; set; } = string.Empty;
         public DateTime EnrollmentDate { get; set; }
-        public ICollection<Enrollment> Enrollments { get; set; }
+        //public ICollection<Enrollment> Enrollments { get; set; }
 
     }
 
